@@ -31,7 +31,7 @@ body {
 		@media screen and (min-width: $desktop) {
 			transform: scale(1);
 			padding: 0;
-			margin-bottom: -8rem;
+			margin-bottom: -4rem;
 			margin-left: 10rem;
 		}
 	}
@@ -45,6 +45,7 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		margin-top: -4rem;
 	}
 
 	&__bg {
