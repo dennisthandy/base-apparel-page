@@ -1,0 +1,205 @@
+@import './variables';
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	outline: none;
+}
+
+body {
+	font-family: $font-josefin-sans;
+	background-image: $gradient-1;
+}
+
+.container {
+	@media screen and (min-width: $desktop) {
+		max-width: 1435px;
+		margin: auto;
+	}
+}
+
+.nav {
+	padding: 1.5rem 0.7rem;
+	position: relative;
+	z-index: 1;
+	&__brand > img {
+		transform: scale(0.7);
+
+		@media screen and (min-width: $desktop) {
+			transform: scale(1);
+			padding: 0;
+			margin-bottom: -8rem;
+			margin-left: 10rem;
+		}
+	}
+}
+
+.article {
+	background-image: $gradient-1;
+	position: relative;
+
+	@media screen and (min-width: $desktop) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__bg {
+		display: none;
+
+		@media screen and (min-width: $desktop) {
+			display: block;
+			position: absolute;
+			// z-index: -1;
+			left: 0;
+		}
+	}
+
+	&__hero {
+		width: 100%;
+		&--mobile {
+			@media screen and (min-width: $desktop) {
+				display: none;
+			}
+		}
+
+		&--desktop {
+			display: none;
+			@media screen and (min-width: $desktop) {
+				display: block;
+				order: 1;
+				width: 70%;
+				margin-left: 25rem;
+			}
+		}
+	}
+
+	&__content {
+		margin: 3rem 0;
+		text-align: center;
+
+		@media screen and (min-width: $desktop) {
+			margin-top: 4.5rem;
+			text-align: left;
+			transform: translateX(11rem);
+		}
+	}
+
+	&__title {
+		font-size: 42px;
+		font-weight: 300;
+		text-transform: uppercase;
+		letter-spacing: 0.5rem;
+		color: $primary-desaturated-red;
+
+		@media screen and (min-width: $desktop) {
+			font-size: 64px;
+			letter-spacing: 1rem;
+			margin-top: 4rem;
+			line-height: 4.25rem;
+		}
+
+		&--sub {
+			color: $neutral-dark-drayish-red;
+			font-weight: 600;
+		}
+	}
+
+	&__description {
+		margin: 1rem 1.5rem;
+		font-size: 14px;
+		color: $primary-desaturated-red;
+		line-height: 1.25rem;
+
+		@media screen and (min-width: $desktop) {
+			font-size: $font-body;
+			line-height: 1.75rem;
+			margin: 1rem 0 3rem 0;
+		}
+	}
+
+	&__subcribe {
+		text-align: center;
+		position: relative;
+		margin-bottom: 0.5rem;
+
+		@media screen and (min-width: $desktop) {
+			text-align: left;
+		}
+
+		input {
+			padding: 1rem 1.5rem;
+			border-radius: 2rem;
+			width: 15rem;
+			border: 1px solid $primary-desaturated-red;
+			color: $primary-desaturated-red;
+
+			@media screen and (min-width: $desktop) {
+				width: 24rem;
+				padding: 1.25rem 1.75rem;
+			}
+
+			&.unvalid {
+				border: 2px solid $primary-soft-red;
+			}
+		}
+
+		button {
+			position: absolute;
+			top: 50%;
+			right: 10%;
+			transform: translateY(-50%);
+			padding: 0.8rem 1.75rem;
+			border-radius: 2rem;
+			background-image: $gradient-2;
+			border: none;
+			cursor: pointer;
+			box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.15);
+
+			@media screen and (min-width: $desktop) {
+				right: 0;
+				padding: 1.1rem 2.75rem;
+			}
+		}
+	}
+}
+
+.error {
+	display: none;
+
+	&--message {
+		color: $primary-soft-red;
+		font-size: 14px;
+
+		@media screen and (min-width: $desktop) {
+			margin-left: 1.75rem;
+		}
+	}
+
+	&--icon {
+		position: absolute;
+		top: 50%;
+		right: 25%;
+		transform: translateY(-50%);
+	}
+
+	&.show {
+		display: inline-block;
+	}
+}
+
+footer {
+	margin-top: 6rem;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: rgb(62, 82, 163);
+}
